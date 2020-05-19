@@ -33,6 +33,7 @@ def DFDX (h):
     print (f'ER% = {(1 - (sol_exata - dfdx) / sol_exata) * 100} % \n\n')
     
 
+
 x = ((math.pi / 6) * 57.2958)
 sol_exata = 10 * math.sin(x)
 
