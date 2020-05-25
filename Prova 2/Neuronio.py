@@ -84,6 +84,40 @@ V_I.append (VI_TOTAL)
 TEMPO.append (T_0 + T)
 
 
+N = [N_0]
+N.append (N_0)
+M = [M_0]
+M.append (M_0)
+H = [H_0]
+H.append (H_0)
+ 
+
+ 
+for i in range (0 , .25 * 10 ** (-3)):
+    AUX_N = DN_DT ( AUX_N, V_I [a])
+    N.append(AUX_N)
+    AUX_M = DM_DT (AUX_M,  V_I [a])
+    M.append (AUX_M)
+    AUX_H = DH_DT (AUX_H, V_I [a])
+    H.append (AUX_H) 
+
+
+    POTENCIA_N = G_K * (N_0 ** 4) * (V_I [a] - V_K)
+    POTENCIA_M = G_NA * (M_0 ** 3) * H_0 * (V_I [a] - V_NA)
+    POTENCIA_L = G_L * (V_I [a] - V_L)
+
+
+    AUX = V_I [0] - (POTENCIA_N + POTENCIA_M + POTENCIA_L) * DELTA_T
+    V_I.append (AUX)  
+
+    a += 1
+    i = i + T
+
+
+
+    
+
+
 
 
 
