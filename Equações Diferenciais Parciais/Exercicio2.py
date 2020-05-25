@@ -67,6 +67,7 @@ t10 = []
 TmaisUM (t9, t10)
 
 
+
 print(t1)
 print(t2)
 print(t3)
@@ -80,7 +81,7 @@ print(t10)
 
 
 
-seg = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] #tempo 
+seg = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
 
 
 matplotlib.pyplot.plot (seg, t0, label='T0(t)')
@@ -95,7 +96,6 @@ matplotlib.pyplot.plot (seg, t8, label='T8(t)')
 matplotlib.pyplot.plot (seg, t9, label='T9(t)')
 matplotlib.pyplot.plot (seg, t10, label='T10(t)')
 matplotlib.pyplot.xlabel ('tempo (t)')
-matplotlib.pyplot.ylabel ('Valores da Temperatura (t)')
-matplotlib.pyplot.title ('Exercício 2 - EDP1')
+matplotlib.pyplot.ylabel ('Temperatura (t)')
 matplotlib.pyplot.legend ()
 matplotlib.pyplot.show ()
