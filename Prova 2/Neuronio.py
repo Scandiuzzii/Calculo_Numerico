@@ -1,4 +1,6 @@
 import math
+import numpy 
+import matplotlib.pyplot
 
 def ALFA_N (vm):
     return (0.01 * (vm - 10) ) / (math.exp ( ( vm - 10) / 10) - 1) 
@@ -10,6 +12,7 @@ def ALFA_M (vm):
 
 def ALFA_H (vm):
     return 0.07 * math.exp (vm / 20)
+
 
 
 def BETA_N (vm):
@@ -90,10 +93,11 @@ M = [M_0]
 M.append (M_0)
 H = [H_0]
 H.append (H_0)
- 
 
- 
-for i in range (0 , .25 * 10 ** (-3)):
+
+STOP = .25 * 10 ** (-3)
+for i in numpy.arange  (0 , STOP):
+    a = 1
     AUX_N = DN_DT ( AUX_N, V_I [a])
     N.append(AUX_N)
     AUX_M = DM_DT (AUX_M,  V_I [a])
@@ -110,9 +114,17 @@ for i in range (0 , .25 * 10 ** (-3)):
     AUX = V_I [0] - (POTENCIA_N + POTENCIA_M + POTENCIA_L) * DELTA_T
     V_I.append (AUX)  
 
-    a += 1
+    
     i = i + T
 
+
+
+matplotlib.pyplot.ioff ()
+matplotlib.pyplot.plot (TEMPO, V_I,label =' V(t) V')
+matplotlib.pyplot.xlabel ('tempo (t) s')
+matplotlib.pyplot.ylabel ('valores (V(t))')
+matplotlib.pyplot.legend ()
+matplotlib.pyplot.show ()
 
 
     
