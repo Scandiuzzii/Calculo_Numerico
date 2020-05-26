@@ -94,9 +94,11 @@ H = [H_0]
 H.append (H_0)
 
 
-MAX = .25 * 10 ** (-3)
-for i in numpy.arange  (0 , MAX):
-    a = 1
+
+a = 1 
+i = 0
+while  i < .25 * 10 ** (-3):
+    print (a)
     AUX_N = DN_DT ( AUX_N, V_I [a])
     N.append(AUX_N)
     AUX_M = DM_DT (AUX_M,  V_I [a])
@@ -110,21 +112,21 @@ for i in numpy.arange  (0 , MAX):
     POTENCIA_L = G_L * (V_I [a] - V_L)
 
 
-    AUX = V_I [0] - (POTENCIA_N + POTENCIA_M + POTENCIA_L) * DELTA_T 
+    AUX = V_I [a - 1] - (POTENCIA_N + POTENCIA_M + POTENCIA_L) * DELTA_T 
     V_I.append (AUX)  
 
-
+    a = a + 1 
     i = i + (0.01 * 10 ** (-3))
     TEMPO.append (i)
 
 
 
 matplotlib.pyplot.ioff ()
-matplotlib.pyplot.plot (TEMPO, V_I,label =' V(t) V')
+matplotlib.pyplot.plot (TEMPO, V_I ,label = ' V(t) V')
 matplotlib.pyplot.xlabel ('tempo (t) s')
-matplotlib.pyplot.ylabel ('valores (V(t))')
+matplotlib.pyplot.ylabel ('valores (Tensão(t))')
 matplotlib.pyplot.legend ()
-matplotlib.pyplot.show ()
+matplotlib.pyplot.show  ()
 
 
     
