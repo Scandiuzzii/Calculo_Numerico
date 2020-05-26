@@ -64,8 +64,7 @@ AUX_M = M_0
 AUX_H = H_0
 
 
-T = float(input ('Valor de deltaT: ') ) * 10 ** (-3) 
-DELTA_T = T / 1 * 10 ** (-6) 
+DELTA_T = (0.01 * 10 ** (-3)) / (1 * 10 ** (-6))
 
 
 V_I = [] #tensão
@@ -84,7 +83,7 @@ POTENCIA_L = G_L * (V_I [0] - V_L)
 
 VI_TOTAL = V_I [0] - (POTENCIA_N + POTENCIA_M + POTENCIA_L) * DELTA_T
 V_I.append (VI_TOTAL)
-TEMPO.append (T_0 + T)
+TEMPO.append (T_0 + (0.01 * 10 ** (-3)) )
 
 
 N = [N_0]
@@ -95,8 +94,8 @@ H = [H_0]
 H.append (H_0)
 
 
-STOP = .25 * 10 ** (-3)
-for i in numpy.arange  (0 , STOP):
+MAX = .25 * 10 ** (-3)
+for i in numpy.arange  (0 , MAX):
     a = 1
     AUX_N = DN_DT ( AUX_N, V_I [a])
     N.append(AUX_N)
@@ -111,11 +110,12 @@ for i in numpy.arange  (0 , STOP):
     POTENCIA_L = G_L * (V_I [a] - V_L)
 
 
-    AUX = V_I [0] - (POTENCIA_N + POTENCIA_M + POTENCIA_L) * DELTA_T
+    AUX = V_I [0] - (POTENCIA_N + POTENCIA_M + POTENCIA_L) * DELTA_T 
     V_I.append (AUX)  
 
-    
-    i = i + T
+
+    i = i + (0.01 * 10 ** (-3))
+    TEMPO.append (i)
 
 
 
