@@ -72,7 +72,7 @@ TEMPO = []
 TEMPO.append (T_0)
 
 
-# S(VI) = gK * n^4 (VI - VK) + gNA * m^3 * h + (VI - vNA) + gL (VI - VL) # Escolhi sperar essa expressão para maior entendemento e facilidade para programação
+# S(VI) = gK * n^4 (VI - VK) + gNA * m^3 * h + (VI - vNA) + gL (VI - VL) # Escolhi seperar essa expressão para maior entendimento
 
 
 POTENCIA_N = G_K * (N_0 ** 4) * (V_I [0] - V_K)
