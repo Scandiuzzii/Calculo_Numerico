@@ -1,5 +1,4 @@
-import math
-import numpy 
+import math 
 import matplotlib.pyplot
 
 def ALFA_N (vm):
